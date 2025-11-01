@@ -5,7 +5,7 @@
                              http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.machinesystem</groupId>
+    <groupId>com.mytech</groupId>
     <artifactId>machine-monitoring-system-config</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
@@ -100,7 +100,6 @@
                 </configuration>
             </plugin>
 
-            <!-- OpenAPI Generator Plugin -->
             <plugin>
                 <groupId>org.openapitools</groupId>
                 <artifactId>openapi-generator-maven-plugin</artifactId>
@@ -116,9 +115,9 @@
                             <inputSpec>${project.basedir}/src/main/resources/api-contracts/v1/machine-monitoring-api.yaml</inputSpec>
                             <generatorName>spring</generatorName>
                             <output>${project.build.directory}/generated-sources/openapi</output>
-                            <apiPackage>com.machinesystem.api.v1</apiPackage>
-                            <modelPackage>com.machinesystem.model.v1</modelPackage>
-                            <invokerPackage>com.machinesystem.invoker</invokerPackage>
+                            <apiPackage>com.mytech.api.v1</apiPackage>
+                            <modelPackage>com.mytech.model.v1</modelPackage>
+                            <invokerPackage>com.mytech.invoker</invokerPackage>
                             <configOptions>
                                 <interfaceOnly>true</interfaceOnly>
                                 <delegatePattern>true</delegatePattern>
@@ -144,14 +143,13 @@
                             <inputSpec>${project.basedir}/src/main/resources/api-contracts/v1/machine-monitoring-api.yaml</inputSpec>
                             <generatorName>java</generatorName>
                             <output>${project.build.directory}/generated-sources/client</output>
-                            <apiPackage>com.machinesystem.client.api.v1</apiPackage>
-                            <modelPackage>com.machinesystem.client.model.v1</modelPackage>
-                            <invokerPackage>com.machinesystem.client.v1</invokerPackage>
+                            <apiPackage>com.mytech.client.api.v1</apiPackage>
+                            <modelPackage>com.mytech.client.model.v1</modelPackage>
+                            <invokerPackage>com.mytech.client.v1</invokerPackage>
                             <configOptions>
                                 <library>resttemplate</library>
                                 <dateLibrary>java8</dateLibrary>
                                 <serializableModel>true</serializableModel>
-<!--                                <useJakartaAnnotations>true</useJakartaAnnotations>-->
                                 <useJakartaEe>true</useJakartaEe>
                                 <useBeanValidation>true</useBeanValidation>
                                 <performBeanValidation>true</performBeanValidation>
