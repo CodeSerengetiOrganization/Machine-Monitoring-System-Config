@@ -154,17 +154,24 @@ components:
 
     MachineStatusResponse:
       type: object
-      allOf:
-        - $ref: '#/components/schemas/FailedProductDto'
-        - type: object
-          properties:
-            timestamp:
-              type: string
-              format: date-time
-              description: Timestamp when the status was captured
-              example: "2025-10-29T02:00:00Z"
-          required:
-            - timestamp
+      properties:
+        failedProducts:
+          type: array
+          items:
+            $ref: '#/components/schemas/FailedProductDto'
+      required:
+        - failedProducts
+      example:
+        - machineId: 1001
+          rackId: 22
+          channelNumber: 7
+          batchSize: 500
+          failedProductCount: [ 2, 0, 1, 4 ]
+        - machineId: 1002
+          rackId: 23
+          channelNumber: 8
+          batchSize: 450
+          failedProductCount: [ 0, 1, 0, 2 ]
 
     ErrorResponse:
       type: object
