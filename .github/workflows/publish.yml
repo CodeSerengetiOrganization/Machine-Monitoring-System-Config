@@ -1,3 +1,4 @@
+# Added a comment to force GitHub to recognize the workflow file
 name: Publish to GitHub Packages
 
 on:
