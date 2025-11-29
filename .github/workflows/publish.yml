@@ -1,4 +1,3 @@
-# Added a comment to force GitHub to recognize the workflow file
 name: Publish to GitHub Packages
 
 on:
@@ -17,14 +16,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up JDK 17
+      - name: Set up JDK 17 and Maven authentication
         uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'
+          server-id: 'github'
+          server-username: ${{ github.actor }}
+          server-password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish to GitHub Packages
-        run: mvn -B deploy -s settings.xml
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_ACTOR: ${{ secrets.GITHUB_ACTOR }}
+        run: mvn -B deploy
