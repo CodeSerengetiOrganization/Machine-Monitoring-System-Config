@@ -14,11 +14,11 @@
     <description>API contract management and class generation for Machine Monitoring System</description>
 
     <distributionManagement>
-        <repository>
+        <snapshotRepository>
             <id>github</id>
             <name>GitHub Packages</name>
             <url>https://maven.pkg.github.com/CodeSerengetiOrganization/Machine-Monitoring-System-Config</url>
-        </repository>
+        </snapshotRepository>
     </distributionManagement>
 
     <properties>
